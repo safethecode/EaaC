@@ -1,4 +1,4 @@
-import { Button, Select, Option } from '@supabase/ui';
+import { Button, Select } from '@supabase/ui';
 import { GNBLayout, Section } from 'components/Layouts';
 import { ListItem } from 'components/ListItem';
 import { HistoryItem } from 'components/HistoryItem';
