@@ -636,6 +636,16 @@
   dependencies:
     "@sinonjs/commons" "^1.7.0"
 
+"@supabase/ui@^0.36.5":
+  version "0.36.5"
+  resolved "https://registry.yarnpkg.com/@supabase/ui/-/ui-0.36.5.tgz#10ee6925bd6e529dbd5678bc457bff26ee71120a"
+  integrity sha512-SdjUf20sCVw0Ap+x4YfGmjMunUz9ZEipc0bwGxj2f5pEWf12qrDQyhhMcoWCWgjWneITfrjFcejV0jA9zTuiEw==
+  dependencies:
+    lodash "^4.17.20"
+    prop-types "^15.7.2"
+  optionalDependencies:
+    fsevents "^2.3.2"
+
 "@tootallnate/once@1":
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/@tootallnate/once/-/once-1.1.2.tgz#ccb91445360179a04e7fe6aff78c00ffc1eeaf82"
@@ -2839,7 +2849,7 @@ lodash.truncate@^4.4.2:
   resolved "https://registry.yarnpkg.com/lodash.truncate/-/lodash.truncate-4.4.2.tgz#5a350da0b1113b837ecfffd5812cbe58d6eae193"
   integrity sha1-WjUNoLERO4N+z//VgSy+WNbq4ZM=
 
-lodash@^4.7.0:
+lodash@^4.17.20, lodash@^4.7.0:
   version "4.17.21"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.21.tgz#679591c564c3bffaae8454cf0b3df370c3d6911c"
   integrity sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==
