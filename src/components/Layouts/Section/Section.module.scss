@@ -1,0 +1,24 @@
+.wrap {
+  background-color: #17171C;
+  border-radius: 24px;
+  padding: 32px;
+  margin-bottom: 16px;
+}
+
+.inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  user-select: none;
+  cursor: pointer;
+
+  & > .context {
+    color: $--eaac_white;
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  &.has-children {
+    margin-bottom: 24px;
+  }
+}

@@ -1,0 +1,10 @@
+.button {
+  transition: background-color 0.25s;
+  border: 0;
+  outline: none;
+  cursor: pointer;
+
+  &.fullSize {
+    width: 100%;
+  }
+}
