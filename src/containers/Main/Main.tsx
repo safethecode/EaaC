@@ -14,6 +14,9 @@ const cx = classNames.bind(styles);
 
 export const Main = ({ balanceData, accountData }: any) => {
   const [open, setOpen] = useState(false);
+  const sortBalanceData = balanceData.sort((a: any, b: any) => {
+    return b.balance - a.balance;
+  });
   function onDismiss() {
     setOpen(false);
   }
@@ -101,13 +104,16 @@ export const Main = ({ balanceData, accountData }: any) => {
       <div className={cx('wrapper')}>
         <Section context="수입/지출" onClick={() => setOpen(true)} isArrow />
         <Section context="잔고">
-          {balanceData.map((item: any) => (
-            <ListItem
-              key={item.id}
-              context={item.context}
-              balance={item.balance}
-            />
-          ))}
+          {sortBalanceData.map(
+            (item: any) =>
+              item.balance !== 0 && (
+                <ListItem
+                  key={item.id}
+                  context={item.context}
+                  balance={item.balance}
+                />
+              ),
+          )}
         </Section>
         <Section context="금전출납부" isArrow>
           {accountData.map((item: any) => (

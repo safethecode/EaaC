@@ -21,7 +21,7 @@ export const HistoryItem = ({
   return (
     <li className={cx('wrap')}>
       <div className={cx('inner-info')}>
-        <p className={cx('context')}>{context}</p>
+        <p className={cx('context')}>{context.substring(0, 20 - 3) + '...'}</p>
         <p className={cx('createdAt')}>{createdAt}</p>
       </div>
       <div className={cx('inner-cash')}>
