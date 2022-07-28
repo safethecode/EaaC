@@ -9,11 +9,19 @@ import { BottomSheet } from 'react-spring-bottom-sheet';
 import { Input } from 'components/Input';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
+import { useRouter } from 'next/router';
 
 const cx = classNames.bind(styles);
 
 export const Main = ({ balanceData, accountData }: any) => {
   const [open, setOpen] = useState(false);
+  const router = useRouter();
+  const sortBalanceData = balanceData.sort((a: any, b: any) => {
+    return b.balance - a.balance;
+  });
+  const handleClick = () => {
+    router.push('/notes');
+  };
   function onDismiss() {
     setOpen(false);
   }
@@ -101,15 +109,18 @@ export const Main = ({ balanceData, accountData }: any) => {
       <div className={cx('wrapper')}>
         <Section context="수입/지출" onClick={() => setOpen(true)} isArrow />
         <Section context="잔고">
-          {balanceData.map((item: any) => (
-            <ListItem
-              key={item.id}
-              context={item.context}
-              balance={item.balance}
-            />
-          ))}
+          {sortBalanceData.map(
+            (item: any) =>
+              item.balance !== 0 && (
+                <ListItem
+                  key={item.id}
+                  context={item.context}
+                  balance={item.balance}
+                />
+              ),
+          )}
         </Section>
-        <Section context="금전출납부" isArrow>
+        <Section context="금전출납부" onClick={handleClick} isArrow>
           {accountData.map((item: any) => (
             <HistoryItem
               key={item.id}
@@ -119,11 +130,10 @@ export const Main = ({ balanceData, accountData }: any) => {
               balance={item.balance}
               createdAt={new Date(item.createdAt).toLocaleString('ko-KR', {
                 hour12: false,
-                timeStyle: 'short',
               })}
             />
           ))}
-          <Button size="medium" textAlign="center" block>
+          <Button size="medium" textAlign="center" block onClick={handleClick}>
             내역 더보기
           </Button>
         </Section>
